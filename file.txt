@@ -1,0 +1,8 @@
+if [[ "$(sudo cat /home/jyotirmaya/ws/mlops1/accuracy.txt)" < "0.9999999" ]]
+then
+echo "Tweaking The program"
+sudo python3 /home/jyotirmaya/ws/mlops1/tweaker.py
+curl 192.168.43.250:8080/view/Integrate%20Machine%20Learning%20with%20Jenkins/job/See%20code%20and%20Launch/build?token=tweakedNowRun
+else
+echo "Merge and Email"
+curl 192.168.43.250:8080/job/Model%20Create%20Success/build?token=modelCreateSuccess
